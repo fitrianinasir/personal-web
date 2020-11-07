@@ -53,6 +53,7 @@ function App() {
           <div style={{marginTop:'15rem', display:'inline-block'}}>
             <h1>Hello. I'm Fitriani Nasir</h1>
             <h3>A Web Enthusiast</h3>
+            <div style={{}}>CONTACT ME</div>
           </div>
         </Container>
       </div>
