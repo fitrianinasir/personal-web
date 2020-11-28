@@ -1,13 +1,116 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.container-text{
+  margin-top: 30rem;
+  display: inline-block;
+  margin-left: 20rem;
+}
+
+.container-text h2{
+  font-family: "Caveat Brush"
+}
+.carousel-indicators li {
+  background-color: #3b4872;
+  width: 50px;
+  height: 5px;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: none;
+}
+
+.footer {
+  width: 100%;
+  height: 30rem;
+  background-color: #2a2f41;
+  color: white;
+  padding-top: 5rem;
+  position: relative;
+}
+
+.footer hr {
+  width: 50%;
+  border-color: rgb(146, 146, 146);
+  opacity: 0.5;
+  margin: 3rem auto 3rem auto;
+  opacity: 0.5;
+}
+
+.footer .h1-2 {
+  font-family: "Bangers", cursive;
+
+  letter-spacing: 5px;
+}
+
+.footer .h1 {
+  font-family: "Francois One", sans-serif;
+  color: #f6a9ab;
+  letter-spacing: 3px;
+  position: absolute;
+  bottom: 20rem;
+  left: 40rem;
+  opacity: 0.5;
+}
+.footer a i {
+  font-size: 3rem;
+}
+
+.footer a:hover{
+  color: white;
+}
+.footer a .icon {
+  margin-left: 5rem;
+}
+
+.footer h5 {
+  font-family: "Inconsolata", monospace;
+  letter-spacing: 5px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.6) 30%,
+    #000 50%,
+    rgba(0, 0, 0, 0.6) 70%
+  );
+  -webkit-mask-size: 200%;
+  animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+
+.footer h1 {
+  color: #d6878a;
+  font-size: 3rem !important;
+  font: bold 34px Helvetica, Arial, Sans-Serif;
+  text-shadow: 1px 1px #fff, 2px 2px #fff, 3px 3px #fff;
+  -webkit-transition: all 0.12s ease-out;
+  -moz-transition: all 0.12s ease-out;
+  -o-transition: all 0.12s ease-out;
+}
+.footer h1:hover {
+  text-shadow: 1px 1px #fff, 2px 2px #fff, 3px 3px #fff,
+    4px 4px #fff, 5px 5px #fff, 6px 6px #fff;
 }

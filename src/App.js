@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Logo from "./assets/LOGO.jpeg";
 import IMG from "./assets/img.svg";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, Carousel } from "react-bootstrap";
+// import Link from "react-router-dom";
 import { useTransition, a } from "react-spring";
 import shuffle from "lodash/shuffle";
 import useMeasure from "./useMeasure";
 import useMedia from "./useMedia";
 import images from "./images";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./App.sass";
 
 function App() {
@@ -44,18 +47,24 @@ function App() {
     config: { mass: 5, tension: 500, friction: 100 },
     trail: 25,
   });
+
   const jumbotronStyle = {
     backgroundImage: `url(${IMG})`,
-    minHeight: "750px",
-    // backgroundAttachment: "fixed",
-    backgroundPosition: "-5rem -12rem",
+    minHeight: "980px",
+    backgroundPosition: "-10rem -1rem",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    // transform: "scale(1.1)",
+  };
+
+  const navbarStyle = {
+    backgroundColor: "white",
+    width: "100%",
   };
 
   return (
     <div className="App">
-      <Navbar>
+      <Navbar style={navbarStyle} fixed="top">
         <Container>
           <Navbar.Brand href="#home">
             <img src={Logo} alt="" width="100" />
@@ -67,7 +76,7 @@ function App() {
             <Nav.Link className="text-dark" href="#about">
               About
             </Nav.Link>
-            <Nav.Link className="text-dark" href="#pricing">
+            <Nav.Link className="text-dark" href="#project">
               Projects
             </Nav.Link>
             <Nav.Link className="text-dark" href="#pricing">
@@ -76,20 +85,21 @@ function App() {
           </Nav>
         </Container>
       </Navbar>
-      <div id="home" style={jumbotronStyle}>
-        <Container>
-          <div style={{ marginTop: "15rem", display: "inline-block" }}>
+      <div id="home" className="container-fluid">
+        <div style={jumbotronStyle}>
+          <div className="container-text">
             <h1>Hello. I'm Fitriani Nasir</h1>
-            <h2 style={{ fontFamily: "Caveat Brush" }}>A Web Enthusiast</h2>
+            <h2>A Web Enthusiast</h2>
             <br />
-            <a href="#" class="cta">
+            <a href="www.google.com" class="cta">
               <span>Curriculum Vitae</span>
               <svg width="13px" height="10px" viewBox="0 0 13 10"></svg>
             </a>
           </div>
-        </Container>
+        </div>
       </div>
-      <Container id="about">
+      <Container id="about" style={{ height: "100vh" }}>
+        <h3>Know more about me</h3>
         <div {...bind} class="list" style={{ height: Math.max(...heights) }}>
           {transitions.map(({ item, props: { xy, ...rest }, key }) => (
             <a.div
@@ -113,7 +123,74 @@ function App() {
           Developer Student Clubs Chapter Hasanuddin University.
         </p>
       </Container>
-      <Container style={{ height: "30rem" }}></Container>
+      <Container id="project" style={{ height: "100vh", marginBottom: "5rem" }}>
+        <h3 className="text-center mb-5">MY PROJECTS</h3>
+        <div>
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="shadow d-block w-50 float-left rounded"
+                src="https://i.ibb.co/Qb9sKMG/Untitled-design-4.png"
+                alt="First slide"
+              />
+              <div className="p-5 w-50 float-right" style={{ height: "30rem" }}>
+                <h3>PT. Phinisi Media Indonesia</h3>
+                <p>
+                  Nulla vitae elit libero, a pharetra augue mollis interdum.
+                </p>
+              </div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="shadow d-block w-50 float-left rounded"
+                src="https://i.ibb.co/Qb9sKMG/Untitled-design-4.png"
+                alt="First slide"
+              />
+              <div className="p-5 w-50 float-right" style={{ height: "30rem" }}>
+                <h3>PT. Phinisi Media Indonesia</h3>
+                <p>
+                  Nulla vitae elit libero, a pharetra augue mollis interdum.
+                </p>
+              </div>
+            </Carousel.Item>
+          </Carousel>
+        </div>
+      </Container>
+      <div className="footer text-center">
+        <h5>FITRIANI NASIR</h5>
+        {/* <h1 className="h1">Keep Learning and Don't Stop</h1> */}
+        <h1 className="h1-2">KEEP LEARNING AND DON'T STOP</h1>
+        <hr />
+
+        <a
+          href="mailto:fitrianinasiir@gmail.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i class="far fa-envelope "></i>
+        </a>
+        <a
+          href="www.linkedin.com/in/fitrianinsr"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i class="fab fa-linkedin icon"></i>
+        </a>
+        <a
+          href="https://twitter.com/fitrianinsrr"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i class="fab fa-twitter-square icon"></i>
+        </a>
+        <a
+          href="https://github.com/fitrianinasir"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i class="fab fa-github icon"></i>
+        </a>
+      </div>
     </div>
   );
 }
